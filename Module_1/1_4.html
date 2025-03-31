@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 4</title>
+</head>
+<body>
+<h1 id="target"></h1>
+<script>
+    'use strict';
+    const name = prompt('Type your name.')
+    const number = Math.floor(Math.random() * 4)
+
+    /*    Best way:
+        const classes = ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"]
+        document.querySelector('#target').innerHTML = name + "goes to" + classes[number];*/
+
+    //     But for exercise:
+    let class_name;
+    switch (number) {
+        case 0:
+            class_name = 'Gryffindor';
+            break;
+        case 1:
+            class_name = 'Slytherin';
+            break;
+        case 2:
+            class_name = 'Hufflepuff';
+            break;
+        default:
+            class_name = 'Ravenclaw';
+    }
+
+    document.querySelector('#target').innerHTML = name + " goes to " + class_name;
+
+</script>
+</body>
+</html>

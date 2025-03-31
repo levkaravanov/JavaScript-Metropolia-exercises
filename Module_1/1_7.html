@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 7</title>
+</head>
+<body>
+<h1 id="target"></h1>
+<script>
+    'use strict';
+
+    function print_message(message) {
+        document.querySelector('#target').innerHTML = message;
+    }
+
+    const number = Number(prompt('Enter a number:'));
+
+    if (isNaN(number)) {
+        print_message('That is not a number!');
+    } else if (number < 0) {
+        print_message('The number cannot be negative. Please reload the page to enter a new number.');
+    } else {
+        let sum = 0;
+        let array = [];
+        for (let i = 0; i < number; i++) {
+            const num = Math.floor(Math.random() * 6) + 1;
+            sum += num;
+            array.push(num);
+        }
+        print_message(`Sum: ${sum}<br>Rolled numbers: ${array.join(', ')}`);
+    }
+</script>
+</body>
+</html>

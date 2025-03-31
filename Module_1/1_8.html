@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 5</title>
+</head>
+<body>
+<h1 id="target"></h1>
+<script>
+    'use strict';
+    let start_year = Number(prompt('Enter a start year:'));
+    let finish_year = Number(prompt('Enter a finish year:'));
+
+    function print_message(message) {
+        document.querySelector('#target').innerHTML = message;
+    }
+
+    function leap_year(start, end) {
+        let years = []
+        const step = start <= end ? 1 : -1;
+
+        while (start !== end + step) {
+            if (start % 400 === 0 || (start % 4 === 0 && start % 100 !== 0)) {
+                years.push(start)
+            }
+            start += step
+        }
+        let html = '<ul>';
+        for (let y of years) {
+            html += `<li>${y}</li>`;
+        }
+        html += '</ul>';
+        print_message(html);
+    }
+
+
+    if (isNaN(start_year)) {
+        print_message(`Year ${start_year} is not a number!`);
+    } else if (isNaN(finish_year)) {
+        print_message(`Year ${finish_year} is not a number!`);
+    } else if (start_year < 0 || finish_year < 0) {
+        print_message('The year cannot be negative. Please reload the page to enter a new number.');
+    } else {
+        if (start_year < finish_year) {
+            leap_year(start_year, finish_year)
+        } else {
+            leap_year(finish_year, start_year)
+        }
+    }
+</script>
+</body>
+</html>

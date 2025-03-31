@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 3</title>
+</head>
+<body>
+<h1>sum: <a id="summa"></a></h1>
+<h1>product: <a id="product"></a></h1>
+<h1>average: <a id="average"></a></h1>
+<script>
+    'use strict';
+    const numbers = [
+            parseInt(prompt('Type a 1st number.')),
+            parseInt(prompt('Type a 2nd number.')),
+            parseInt(prompt('Type a 3rd number.'))
+    ]
+    document.querySelector('#summa').innerHTML = String(numbers.reduce((acc, num) => acc + num, 0));
+    document.querySelector('#product').innerHTML = String(numbers.reduce((acc, num) => acc * num, 1));
+    document.querySelector('#average').innerHTML = String((numbers.reduce((acc, num) => acc + num, 0)) / numbers.length);
+
+
+</script>
+</body>
+</html>
