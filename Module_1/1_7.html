@@ -21,13 +21,13 @@
         print_message('The number cannot be negative. Please reload the page to enter a new number.');
     } else {
         let sum = 0;
-        let array = [];
+        let numerot = ""
         for (let i = 0; i < number; i++) {
             const num = Math.floor(Math.random() * 6) + 1;
             sum += num;
-            array.push(num);
+            numerot += num.toString()
         }
-        print_message(`Sum: ${sum}<br>Rolled numbers: ${array.join(', ')}`);
+        print_message(`Sum: ${sum}<br>Rolled numbers: ${numerot}`);
     }
 </script>
 </body>

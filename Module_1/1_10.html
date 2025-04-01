@@ -1,47 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Exercise 10</title>
-  <style>
-    #target {
-      margin-top: 40px;
-      text-align: center;
-      font-size: 1.5em;
-      font-family: Arial, sans-serif;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Exercise 9</title>
 </head>
 <body>
 <h1 id="target"></h1>
 <script>
-  'use strict';
+    'use strict';
 
-  function print_message(message) {
-    document.querySelector('#target').innerHTML = message;
-  }
-
-  const dice = Number(prompt('Enter number of dice:'));
-  const targetSum = Number(prompt('Enter the sum to check:'));
-  const rolls = 10000;
-  let success = 0;
-
-  if (isNaN(dice) || isNaN(targetSum) || dice < 1 || targetSum < dice || targetSum > dice * 6) {
-    print_message('Invalid input.');
-  } else {
-    for (let i = 0; i < rolls; i++) {
-      let sum = 0;
-      for (let j = 0; j < dice; j++) {
-        sum += Math.floor(Math.random() * 6) + 1;
-      }
-      if (sum === targetSum) {
-        success++;
-      }
+    function print_message(message) {
+        document.querySelector('#target').innerHTML = message;
     }
 
-    const probability = (success / rolls * 100).toFixed(2);
-    print_message(`Probability to get sum ${targetSum} with ${dice} dice is ${probability}%`);
-  }
+    const dice = Number(prompt('Enter the number of dice:'));
+    const targetSum = Number(prompt('Enter the sum of the eye numbers:'));
+    const rolls = 10000;
+    let success = 0;
+
+    if (isNaN(dice) || isNaN(targetSum) || dice < 1 || targetSum < dice || targetSum > dice * 6) {
+        print_message('Invalid input. Reload the page and try again.');
+    } else {
+        for (let i = 0; i < rolls; i++) {
+            let sum = 0;
+            for (let j = 0; j < dice; j++) {
+                sum += Math.floor(Math.random() * 6) + 1;
+            }
+            if (sum === targetSum) {
+                success++;
+            }
+        }
+
+        const probability = (success / rolls * 100).toFixed(2);
+
+        print_message(`Probability to get sum ${targetSum} with ${dice} dice is ${probability}%`);
+    }
 </script>
 </body>
 </html>
