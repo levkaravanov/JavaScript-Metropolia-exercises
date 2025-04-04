@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 2_4</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    const numbers = []
+
+    let number = 1
+    while (number !== 0) {
+      number = Number(prompt('Type a number'))
+      if(number !== 0) {
+        numbers.push(number)
+      }
+    }
+
+    numbers.sort((a,b) => a-b);
+    numbers.reverse()
+
+    for (let n of numbers) {
+      console.log(n)
+    }
+
+</script>
+</body>
+</html>

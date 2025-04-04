@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 2_6</title>
+</head>
+<body>
+<p id="target"></p>
+<script>
+    'use strict';
+
+    function print_message(message) {
+        document.querySelector('#target').innerHTML = message;
+    }
+
+    function rollDice() {
+        return Math.floor(Math.random() * 6) + 1;
+
+    }
+
+    const numbers = []
+
+    while (true) {
+        let number = rollDice()
+        if (number !== 6) {
+            numbers.push(number)
+        } else {
+            break
+        }
+    }
+
+    let html = '<ul>'
+    for (let n of numbers) {
+        html += `<li>${n}</li>`
+    }
+    html += '</ul>'
+
+    print_message(html)
+
+</script>
+</body>
+</html>

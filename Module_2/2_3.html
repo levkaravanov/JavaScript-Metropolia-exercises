@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 2_3</title>
+</head>
+<body>
+<h1 id="target"></h1>
+<script>
+    'use strict';
+
+    const dogs = []
+
+    for (let i = 1; i <= 6; i++) {
+        const dog = prompt(`${i}. Type a dog's name`);
+        dogs.push(dog)
+    }
+
+    dogs.sort()
+    dogs.reverse()
+
+    let html = '<ul>'
+    for (let d of dogs) {
+        html += `<li>${d}</li>`
+    }
+    html += '</ul>'
+
+    document.querySelector('#target').innerHTML = html
+
+</script>
+</body>
+</html>

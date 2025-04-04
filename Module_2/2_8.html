@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 2_8</title>
+</head>
+<body>
+<p id="target"></p>
+<script>
+    'use strict';
+
+    function print_message(message) {
+        document.querySelector('#target').innerHTML = message;
+    }
+
+    function concat (names) {
+      let nameString = ''
+      for (let n of names) {
+        nameString += n
+      }
+      print_message(nameString)
+    }
+
+    const names = ['Johnny', 'DeeDee', 'Joey', 'Marky']
+
+    concat(names)
+
+</script>
+</body>
+</html>

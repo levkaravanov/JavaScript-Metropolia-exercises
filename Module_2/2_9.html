@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 2_9</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    function even(numbers) {
+        const evenNumbers = []
+        for (let n of numbers) {
+            if (n % 2 === 0) {
+                evenNumbers.push(n);
+            }
+        }
+        return evenNumbers;
+    }
+
+    const numbers = [343, 233, 34234, 87, 6, 3, 7]
+    const evenNumbers = even(numbers)
+    console.log(numbers)
+    console.log(evenNumbers)
+
+</script>
+</body>
+</html>

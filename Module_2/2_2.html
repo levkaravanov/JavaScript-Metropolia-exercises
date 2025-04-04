@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 2_2</title>
+</head>
+<body>
+<h1 id="target"></h1>
+<script>
+    'use strict';
+
+    const participants = []
+
+    const number = Number(prompt(`Type a number of participants`));
+
+    for (let i = 1; i <= number; i++) {
+        const participant = prompt(`${i}. Type a participant's name`);
+        participants.push(participant)
+    }
+
+    participants.sort()
+
+    let html = '<ol>'
+    for (let p of participants) {
+        html += `<li>${p}</li>`
+    }
+    html += '</ol>'
+
+    document.querySelector('#target').innerHTML = html
+
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 2_10</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    const candidateCount = Number(prompt('Enter the number of candidates'));
+
+    const candidates = [];
+
+    for (let i = 1; i <= candidateCount; i++) {
+        let candidateName = prompt(`Enter the name of candidate #${i}`);
+        candidates.push({
+            number: i,
+            name: candidateName,
+            votes: 0,
+        });
+    }
+    ;
+
+
+    const voterCount = Number(prompt('Enter the number of voters'));
+
+    let list = ''
+
+    for (let c of candidates) {
+        list += `Candidate number ${c.number}: ${c.name}\n`
+    }
+
+    for (let i = 1; i <= voterCount; i++) {
+        let vote = Number(prompt(`Enter the candidate number.\n${list}`));
+        if (vote > 0 && vote <= candidates.length) {
+            candidates[vote - 1].votes += 1;
+        } else {
+            console.log('Invalid number entered')
+        }
+
+    }
+
+    candidates.sort((a, b) => b.votes - a.votes);
+
+    console.log(candidates)
+    console.log(`The winner is ${candidates[0].name} with ${candidates[0].votes} votes.`)
+    console.log('results:')
+
+    for (let c of candidates) {
+        console.log(`${c.name}: ${c.votes} votes`)
+    }
+
+</script>
+</body>
+</html>
