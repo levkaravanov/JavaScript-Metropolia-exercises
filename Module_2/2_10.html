@@ -20,15 +20,14 @@
             votes: 0,
         });
     }
-    ;
 
 
     const voterCount = Number(prompt('Enter the number of voters'));
 
-    let list = ''
+    let list = '';
 
     for (let c of candidates) {
-        list += `Candidate number ${c.number}: ${c.name}\n`
+        list += `Candidate number ${c.number}: ${c.name}\n`;
     }
 
     for (let i = 1; i <= voterCount; i++) {
