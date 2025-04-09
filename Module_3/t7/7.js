@@ -1,11 +1,10 @@
-const target = document.getElementById('target')
-const img = document.getElementById('img')
+const trigger = document.getElementById('trigger')
+const img = document.getElementById('target')
 
-function changePic () {
-    const img = document.createElement('img')
-    img.src = 'img/picB.jpg'
-    target.appendChild(img)
-}
+trigger.addEventListener('mouseover', function () {
+    img.src = 'img/picB.jpg';
+});
 
-
-target.addEventListener('mouseover', changePic)
+trigger.addEventListener('mouseout', function () {
+    img.src = 'img/picA.jpg';
+});
