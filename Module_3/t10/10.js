@@ -2,8 +2,8 @@ const form = document.getElementById('source');
 
 form.addEventListener('submit', function (event) {
     event.preventDefault();
-    const firstname = document.getElementById('firstname').value;
-    const lastname = document.getElementById('lastname').value;
+    const firstname = document.querySelector('[name="firstname"]').value;
+    const lastname = document.querySelector('[name="lastname"]').value;
 
-    console.log(firstname, lastname);
+    document.querySelector('#target').innerHTML = `Your name is ${firstname} ${lastname}`
 });
